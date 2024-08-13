@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.amber.min.css">
+  {% block header %}{% endblock header %}
+  <title>🃏 Joker</title>
+</head>
+<body class="container">
+  <header>
+    <hgroup>
+      <h1>🃏 Joker</h1>
+      <p>Your home for flash card creation.</p>
+    </hgroup>
+    <nav>
+      <ul>
+        <li><a href="{% url "index" %}">Create</a></li>
+        <li><a href="{% url "cards" %}">Saved Cards</a></li>
+        <li><a href="#">Premium</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    {% block main %}{% endblock main %}
+  </main>
+  <footer>
+    {% block footer %}{% endblock footer %}
+  </footer>
+</body>
+</html>

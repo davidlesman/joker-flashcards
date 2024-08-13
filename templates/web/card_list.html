@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block header %}
+<script src="{% static "cards.js" %}" defer></script>
+{% endblock header %}
+{% block main %}
+<section id="choice">
+  <h2>What set will you study?</h2>
+  {% csrf_token %}
+  <div class="grid">
+    {% for group in object_list %}
+      <a href="javascript:void(0)" value="{{ group.group }}" id="group">{{ group.group }}</a>
+    {% empty %}
+    <h2>Start creating flashcards!</h2>
+    <a href="{% url "index" %}"><button>Create 🃏</button></a>
+    {% endfor %}
+  </div>
+</section>
+<section id="list"></section>
+{% endblock main %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% block header %}
+<script src="{% static "form.js" %}" defer></script>
+{% endblock header %}
+{% block main %}
+<hgroup>
+  <h2>Flash Card Creation</h2>
+  <p>Choose any subject and get flashcards!</p>
+</hgroup>
+<p>Once the cards are created, if you like them, save them to the database!</p>
+<section>
+  <form id="chat-form">
+    {% csrf_token %}
+    <fieldset role="group">
+      <input id="chat-input" name="text" type="text" placeholder="Type a subject..."  />
+      <input type="submit" value="Send"/>
+    </fieldset>
+  </form>
+  <progress id="progress" style="display: none"/>  
+</section>
+<section>
+  <div id="flashcards"></div>
+  <form id="save-form" style="display: none">
+    {% csrf_token %}
+    <input type="submit" value="Save Cards"/>
+  </form>
+</section>
+{% endblock main %}
