@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block header %}
-<script src="{% static "form.js" %}" defer></script>
+<script src="{% static 'form.js' %}" defer></script>
 {% endblock header %}
 {% block main %}
 <hgroup>
@@ -21,9 +21,13 @@
 </section>
 <section>
   <div id="flashcards"></div>
-  <form id="save-form" style="display: none">
-    {% csrf_token %}
-    <input type="submit" value="Save Cards"/>
-  </form>
+  {% if premium %}
+    <form id="save-form" style="display: none">
+      {% csrf_token %}
+      <input type="submit" value="Save Cards"/>
+    </form>
+  {% else %}
+    <p>If you want to save your flashcards, get <a href="{% url 'premium' %}">premium</a>!</p>
+  {% endif %}
 </section>
 {% endblock main %}

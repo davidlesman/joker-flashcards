@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block header %}
+<script src="{% static 'payment.js' %}" defer></script>
+<script src="https://js.stripe.com/v3/"></script>
+{% endblock header %}
+{% block main %}
+<hgroup>
+  <h2>Ready to play the cards in your favor?</h2>
+  <p>Get premium and study even better!</p>
+</hgroup>
+<section>
+    <button id="submit">Lol</button>
+</section>
+{% endblock main %}

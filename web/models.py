@@ -15,3 +15,12 @@ class Card(models.Model):
             "front": self.front,
             "group": self.group,
         }
+
+
+class Premium(models.Model):
+    """terrible way of saving users, this is just to test if it works"""
+
+    ip_address = models.CharField(max_length=128)
+
+    def __str__(self) -> str:
+        return self.ip_address
