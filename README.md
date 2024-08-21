@@ -11,7 +11,7 @@ Joker is an AI-powered flashcard creator designed to help users efficiently gene
 - **AI Flashcard Creation**: Generate flashcards automatically based on input content using Gemini AI.
 - **User-Friendly Interface**: Simple and intuitive design powered by PicoCSS.
 - **Django Backend**: Robust and scalable backend to handle requests and manage data.
-- **Stripe Integration (Coming Soon)**: Easy and secure payment processing for premium features.
+- **Stripe Integration**: Easy and secure payment processing for premium features.
 
 ## Getting Started
 
